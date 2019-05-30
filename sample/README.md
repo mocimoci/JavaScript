@@ -3,11 +3,11 @@
 ## 簡単な計算をする
 *dentaku.html*
 
-**DOM（document Object Model）**  
+### DOM（document Object Model）
 JavaScriptからHTMLの各要素を操作するための仕組み  
 （document.bodyで、HTMLファイルのbodyタグの中身を取得、とか）
   
-**変数**  
+### 変数
 値を一時的に格納する入れ物  
 
 `var src = $("#srcArea").val();`  
