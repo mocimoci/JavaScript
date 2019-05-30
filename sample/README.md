@@ -1,28 +1,30 @@
-１ページ完結のminiコード
+# １ページ完結のminiコード
 
 ## 簡単な計算をする
 dentaku.html
 
-フォームから値を取得<br>
-$(セレクタ).val()
+<dl>
+<dt>フォームから値を取得  </dt>
+<dd>$(セレクタ).val()</dd>
 
-フォームに値を出力<br>
-$(セレクタ).val(値)
+<dt>フォームに値を出力  </dt>
+<dd>$(セレクタ).val(値)</dd>
 
-DOMからHTMLを取得<br>
-$(セレクタ).html()
+<dt>DOMからHTMLを取得  </dt>
+<dd>$(セレクタ).html()</dd>
 
-DOMにHTMLを出力<br>
-$(セレクタ).html(値)
+<dt>DOMにHTMLを出力  </dt>
+<dd>$(セレクタ).html(値)</dd>
 
-DOMからテキストを取得<br>
-$(セレクタ).text()
+<dt>DOMからテキストを取得  </dt>
+<dd>$(セレクタ).text()</dd>
 
-DOMにテキストを出力<br>
-$(セレクタ).text(値)
+<dt>DOMにテキストを出力  </dt>
+<dd>$(セレクタ).text(値)</dd>
+</dl>
 
 
 
-DOM（document Object Model）<br>
-JavaScriptからHTMLの各要素を操作するための仕組み<br>
+DOM（document Object Model）  
+JavaScriptからHTMLの各要素を操作するための仕組み  
 （document.bodyで、HTMLファイルのbodyタグの中身を取得、とか）
