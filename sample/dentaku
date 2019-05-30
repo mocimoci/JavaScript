@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<!-- ---head----------------------------------------------------------------------------- -->
+<head>
+  <title>電卓</title>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+   <script type="text/javascript">
+   //DOMの準備ができてから実行
+   $(function(){
+    //ボタンのクリック処理を実装
+    $("#btn").click(function(){
+
+      var src = $("#srcArea").val(); //入力
+
+      var res = eval(src);  //計算
+
+      $("#resArea").val(res); //出力
+
+      console.log(res);  //コンソール表示
+
+    })
+
+   //タイトルをH1タグの中に表示
+   $("h1").text(document.title);
+
+   });
+   </script>
+   <style type="text/css">
+     textarea.inOut{width: 640px;height: 150px;}
+   </style>
+</head>
+<!-- ---head----------------------------------------------------------------------------- -->
+
+
+<!-- ---body----------------------------------------------------------------------------- -->
+<body>
+  <h1></h1>
+  <h2>入力</h2>
+  <textarea class="inOut" id="srcArea"></textarea><br>
+
+  <input type="button" value="実行" id="btn"><br>
+
+  <h2>出力</h2>
+  <textarea class="inOut" id="resArea"></textarea><br>
+
+</body>
+<!-- ---body----------------------------------------------------------------------------- -->
+</html>
