@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<!-- ===head=============================================================================== -->
+<head>
+  <title>文字数カウント2</title>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+   <script type="text/javascript">
+   //DOMの準備ができてから実行
+   $(function(){
+    //ボタンのクリック処理を実装
+    $("#btn").click(function(){
+
+      var src = $("#srcArea").val(); //入力　入力エリアから値を取得
+
+      var linebreak = $("#linebreak").prop("checked"); //チェックボックスを判定
+      var space = $("#space").prop("checked");         //チェックボックスを判定
+
+      //改行にチェックが入っていれば削除
+      if(linebreak){
+        src = src.replace(/\n/g,"");
+      }
+
+      //スペースにチェックが入っていれば削除
+      if (space) {
+        src = src.replace(/ /g,"");
+        src = src.replace(/ /g,"");
+      }
+
+      var res = src.length;
+
+
+      $("#resArea").val(res); //出力　出力エリアへ、計算結果を書き出す
+
+      console.log(res);  //コンソール表示
+
+    })
+
+   //タイトルをH1タグの中に表示
+   $("h1").text(document.title);
+
+   });
+   </script>
+   <style type="text/css">
+     textarea.inOut{width: 640px;height: 150px;}
+   </style>
+</head>
+<!-- ===head=============================================================================== -->
+
+<!-- 
+
+メモ
+
+val()は、HTMLタグ内に記述されているvalue属性を取得したり変更することができるメソッド
+()内が空なら値を取得、()値を入れると、その値をvalueに書き込む 
+
+-->
+
+<!-- ===body=============================================================================== -->
+<body>
+  <h1></h1>
+  <h2>入力</h2>
+  <textarea class="inOut" id="srcArea"></textarea><br> <!-- 入力エリア -->
+  <input type="checkbox" id="linebreak">改行を数えない
+  <input type="checkbox" id="space">スペースを数えない<br>
+  <input type="button" value="実行" id="btn"><br>
+
+  <h2>出力</h2>
+  <textarea class="inOut" id="resArea"></textarea><br> <!-- 出力エリア -->
+
+</body>
+<!-- ===body=============================================================================== -->
+</html>
