@@ -66,7 +66,7 @@ eval() は文字列として表された JavaScript コードを式として評�
 
 `var space = $("#space").prop("checked");  `  
 
-チェックが入っているかどうか判定
+チェックが入っているかどうか判定  
 チェックされていればtrue、されていなければfalseの値がspaceに入る
 
 `if(linebreak){処理}`  
