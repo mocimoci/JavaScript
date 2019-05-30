@@ -32,3 +32,10 @@ eval() は文字列として表された JavaScript コードを式として評�
 | DOMにHTMLを出力 | $(セレクタ).html(値) |
 | DOMからテキストを取得 | $(セレクタ).text() |
 | DOMにテキストを出力 | $(セレクタ).text(値) |
+
+## 文字数をカウントする
+*count.html*
+
+`var res = src.length;`  
+文字列の長さを取得
+
