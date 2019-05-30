@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<!-- ===head=============================================================================== -->
+<head>
+  <title>文字数カウント</title>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+   <script type="text/javascript">
+   //DOMの準備ができてから実行
+   $(function(){
+    //ボタンのクリック処理を実装
+    $("#btn").click(function(){
+
+      var src = $("#srcArea").val(); //入力　入力エリアから値を取得
+
+      var res = src.length;  //文字列の長さを取得
+
+      $("#resArea").val(res); //出力　出力エリアへ、計算結果を書き出す
+
+      console.log(res);  //コンソール表示
+
+    })
+
+   //タイトルをH1タグの中に表示
+   $("h1").text(document.title);
+
+   });
+   </script>
+   <style type="text/css">
+     textarea.inOut{width: 640px;height: 150px;}
+   </style>
+</head>
+<!-- ===head=============================================================================== -->
+
+<!-- 
+
+メモ
+
+val()は、HTMLタグ内に記述されているvalue属性を取得したり変更することができるメソッド
+()内が空なら値を取得、()値を入れると、その値をvalueに書き込む 
+
+-->
+
+<!-- ===body=============================================================================== -->
+<body>
+  <h1></h1>
+  <h2>入力</h2>
+  <textarea class="inOut" id="srcArea"></textarea><br> <!-- 入力エリア -->
+
+  <input type="button" value="実行" id="btn"><br>
+
+  <h2>出力</h2>
+  <textarea class="inOut" id="resArea"></textarea><br> <!-- 出力エリア -->
+
+</body>
+<!-- ===body=============================================================================== -->
+</html>
