@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<!-- ===head=============================================================================== -->
+<head>
+  <title>文字列置換</title>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+   <script type="text/javascript">
+   //DOMの準備ができてから実行
+   $(function(){
+    //ボタンのクリック処理を実装
+    $("#btn").click(function(){
+
+      var src = $("#srcArea").val(); //入力　入力エリアから値を取得
+
+      var res = src; 
+
+      res = markdown(res);  //function markdown で、簡易マークダウン変換を実行
+
+      $("#resAtea2").html(res);  //HTMLとして出力
+
+
+      function markdown(src){
+
+          var res = src;
+
+          res = res.replace(/^# (.+?)$/gm,"<h1>$1</h1>"); 
+          res = res.replace(/^## (.+?)$/gm,"<h2>$1</h2>"); 
+          res = res.replace(/^### (.+?)$/gm,"<h3>$1</h3>"); 
+          res = res.replace(/"(.+?)"/g,"<b>$1</b>"); 
+          res = res.replace(/-----/g,"<hr>"); 
+
+          return res;
+
+      }
+
+
+      $("#resArea").val(res); //出力　出力エリアへ、計算結果を書き出す
+
+      console.log(res);  //コンソール表示
+
+    })
+
+   //タイトルをH1タグの中に表示
+   $("h1").text(document.title);
+
+   });
+   </script>
+   <style type="text/css">
+     textarea.inOut{width: 640px;height: 150px;}
+   </style>
+</head>
+<!-- ===head=============================================================================== -->
+
+<!-- 
+
+メモ
+
+「$1」を使った便利なテクニック
+カッコ()で囲われた部分を変数に代入する
+()で括った中身は、情報を維持したまま$1にいれられる
+この変数は$1,$2,$3…と複数用いることが可能、()の順番に呼応する
+
+val()は、HTMLタグ内に記述されているvalue属性を取得したり変更することができるメソッド
+()内が空なら値を取得、()値を入れると、その値をvalueに書き込む 
+
+-->
+
+<!-- ===body=============================================================================== -->
+<body>
+  <h1></h1>
+  <h2>入力</h2>
+  <textarea class="inOut" id="srcArea"></textarea><br> <!-- 入力エリア -->
+
+  <input type="button" value="実行" id="btn"><br>
+
+  <h2>出力</h2>
+  <textarea class="inOut" id="resArea"></textarea><br> <!-- 出力エリア -->
+
+
+  <div id="resAtea2"></div>
+
+</body>
+<!-- ===body=============================================================================== -->
+</html>
